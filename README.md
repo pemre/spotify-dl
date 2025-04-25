@@ -46,8 +46,9 @@ FLAGS:
 OPTIONS:
     -c, --compression <compression>    Setting the flac compression level from 0 (fastest, least compression) to
                                        8 (slowest, most compression). A value larger than 8 will be Treated as 8.
-                                       Default is 4.
+                                       Default is 4. NOT USED.
     -d, --destination <destination>    The directory where the songs will be downloaded
+    -f, --format <format>              The format to download the tracks in. Default is flac. [default: flac]
     -t, --parallel <parallel>          Number of parallel downloads. Default is 5. [default: 5]
     -p, --password <password>          Your Spotify password
     -u, --username <username>          Your Spotify username
