@@ -9,11 +9,11 @@ pub async fn create_session(username: String, password: Option<String>) -> Resul
     let cache = Cache::new(credentials_store, None, None, None)?;
 
     let session_config = SessionConfig::default();
-    let credentials = get_credentials(username, password, &cache);
+    // let credentials = get_credentials(username, password, &cache);
+    let credentials = cache.credentials().expect("REASON");
+    // cache.save_credentials(&credentials);
 
-    cache.save_credentials(&credentials);
-
-    let (session, _) = Session::connect(session_config, credentials, Some(cache), false).await?;
+    let (session, _) = Session::connect(session_config, credentials, Some(cache), true).await?;
     Ok(session)
 }
 
